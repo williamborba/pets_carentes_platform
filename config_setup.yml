@@ -1,0 +1,29 @@
+debug: True
+secret: 'XXXXXXXXXXXXXXXXXXXXX'
+aws:
+    key: XXXXXXXXXXXXXXXXXXXXX
+    secret: XXXXXXXXXXXXXXXXXXXXX
+    s3:
+        region: sa-east-1
+        bucket: pets-carentes-prod
+        path: pet/
+        url_prefix: ''
+api:
+    host: ''
+    route:
+        auth: api/v1/admin/auth/
+        publish_pending: api/v1/admin/pet/pending/
+allowed_host:
+    - 127.0.0.1
+database:
+    name: 'pets-carentes-api'
+    host: 'database'
+    port: 27017
+    user: 'root'
+    password: 'XXXXXXXXXXXXXXXXXXXXX'
+email:
+    tls: True
+    host: 'smtp.gmail.com'
+    user: 'william.borba@willcode.com.br'
+    password: 'XXXXX'
+    port: 587

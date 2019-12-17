@@ -1,0 +1,11 @@
+Django==3
+PyJWT
+pymongo
+Pillow
+boto3
+django-crontab
+firebase-admin
+requests
+gunicorn
+psycopg2
+PyYAML
