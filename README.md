@@ -48,7 +48,7 @@ Na etapa **3**, você pode consultar as portas que estão em uso pelo comando `s
 
 ##### Etapa 4
 
-Copiar o arquivo de configuração yml para dentro da pasta **app**.
+Copiar o arquivo de configuração yml para dentro das pastas **app**.
 
 Exemplo: `cp config_setup.yml app/config.yml`
 
