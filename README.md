@@ -135,5 +135,5 @@ Para limpar o cache do python e visualziar as mudanças basta reiniciar o contai
 Os disparos em push são processados em uma fila, por um scrip python, podendo ser ativado com o seguinte comando:
 
 ```
-sudo docker exec -it pc_api_app_1 bash -c "python manage.py PushQueue"
+sudo docker exec -it pc_platform_appapi_1 bash -c "python manage.py PushQueue"
 ```
