@@ -13,6 +13,7 @@ api:
     route:
         auth: api/v1/admin/auth/
         publish_pending: api/v1/admin/pet/pending/
+        publish_accept: api/v1/pet/timeline/
 allowed_host:
     - 127.0.0.1
 database:
