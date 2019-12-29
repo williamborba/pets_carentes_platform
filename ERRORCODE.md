@@ -114,3 +114,9 @@ Lista de códigos da api.
 | Api | 1134 | 500 | Exception. |
 | Api | 1135 | 400 | Parâmetros insuficientes. |
 | Api | 1136 | 400 | Nenhum registro modificado. |
+| Api | 1137 | 400 | Parâmetro specie incorreto. |
+| Api | 1138 | 400 | Parâmetros insuficientes. |
+| Api | 1139 | 400 | Registro não encontrado. |
+| Api | 1140 | 400 | Usuario incorreto. |
+| Api | 1141 | 400 | Erro na criação do registro pushQueue. |
+| Api | 1142 | 500 | Exception. |
