@@ -50,7 +50,6 @@ Lista de códigos da api.
 | Api | 1070 | 500 | Exceção não experada. |
 | Api | 1071 | 500 | Exceção não experada. |
 | Api | 1072 | 400 | Parâmetro specie incorreto. |
-| Api | 1073 | 400 | Parâmetros insuficientes. |
 | Api | 1074 | 400 | Usuário sem permissão. |
 | Api | 1075 | 400 | Usuário sem permissão. |
 | Api | 1076 | 500 | Exceção não experada. |
