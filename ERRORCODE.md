@@ -119,3 +119,5 @@ Lista de códigos da api.
 | Api | 1140 | 400 | Usuario incorreto. |
 | Api | 1141 | 400 | Erro na criação do registro pushQueue. |
 | Api | 1142 | 500 | Exception. |
+| Api | 1143 | 400 | Registro não encontrado. |
+| Api | 1144 | 400 | Adotados não podem ser removidos. |
