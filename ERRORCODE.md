@@ -121,3 +121,7 @@ Lista de códigos da api.
 | Api | 1142 | 500 | Exception. |
 | Api | 1143 | 400 | Registro não encontrado. |
 | Api | 1144 | 400 | Adotados não podem ser removidos. |
+| Api | 1145 | 400 | Parâmetro specie incorreto. |
+| Api | 1146 | 500 | Exception. |
+| Api | 1147 | 500 | Parâmetros insuficientes. |
+| Api | 1148 | 500 | Usuário não encontrado. |

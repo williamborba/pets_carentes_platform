@@ -1,27 +1,30 @@
 debug: True
-secret: 'XXXXXXXXXXXXXXXXXXXXX'
+secret: wm%q_c$zjm0j1a2)pg(n6l9_ryxz7ih7fe9)8&y+5)dyy16k%v
 aws:
-    key: XXXXXXXXXXXXXXXXXXXXX
-    secret: XXXXXXXXXXXXXXXXXXXXX
+    key: AKIAIAI3TET3M5BPQVIQ
+    secret: 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
     s3:
         region: sa-east-1
         bucket: pets-carentes-prod
         path: pet/
-        url_prefix: ''
+        url_prefix: https://pets-carentes-hlg.s3-sa-east-1.amazonaws.com/
 api:
-    host: ''
+    host: http://192.168.25.3:9021/service/api/
     route:
-        auth: api/v1/admin/auth/
-        publish_pending: api/v1/admin/pet/pending/
-        publish_accept: api/v1/pet/timeline/
+        auth: v1/admin/auth
+        publish_pending: v1/admin/pet/pending
+        publish_accept: v1/pet/timeline
+        user_pet: v1/admin/pet/user
 allowed_host:
     - 127.0.0.1
+    - 100.26.100.238
+    - petscarentes.app
 database:
-    name: 'pets-carentes-api'
-    host: 'database'
+    name: pets-carentes-api
+    host: 100.26.100.238
     port: 27017
-    user: 'root'
-    password: 'XXXXXXXXXXXXXXXXXXXXX'
+    user: willcode
+    password: 71f5ab94c34f3e0dd6f6c9a9b552d38f
 email:
     tls: True
     host: 'smtp.gmail.com'
