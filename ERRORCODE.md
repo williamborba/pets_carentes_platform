@@ -125,3 +125,61 @@ Lista de códigos da api.
 | Api | 1146 | 500 | Exception. |
 | Api | 1147 | 500 | Parâmetros insuficientes. |
 | Api | 1148 | 500 | Usuário não encontrado. |
+| Api | 1149 | 400 | Parâmetros insuficientes. |
+| Api | 1150 | 400 | Parâmetro incorreto. |
+| Api | 1151 | 400 | Parâmetro incorreto. |
+| Api | 1152 | 400 | Parâmetro incorreto. |
+| Api | 1154 | 400 | Registro não encontrado. |
+| Api | 1155 | 400 | Erro na criação do registro. |
+| Api | 1156 | 400 | Parâmetros insuficientes. |
+| Api | 1157 | 400 | Parâmetros insuficientes. |
+| Api | 1158 | 400 | Registro não encontrado. |
+| Api | 1159 | 400 | Parâmetro incorreto. |
+| Api | 1160 | 400 | Parâmetro incorreto. |
+| Api | 1162 | 400 | Nenhum registro modificado. |
+| Api | 1163 | 400 | Parâmetros insuficientes. |
+| Api | 1164 | 400 | Registro não encontrado. |
+| Api | 1165 | 400 | Nenhum registro modificado. |
+| Api | 1166 | 400 | Parâmetros incorretos. |
+| Api | 1167 | 400 | Parâmetros insuficientes. |
+| Api | 1168 | 400 | Parâmetro incorreto. |
+| Api | 1169 | 400 | Parâmetro incorreto. |
+| Api | 1170 | 400 | Parâmetro incorreto. |
+| Api | 1171 | 400 | Registro não encotrado. |
+| Api | 1172 | 400 | Erro na criação do registro oferta. |
+| Api | 1173 | 400 | Parâmetros insuficientes. |
+| Api | 1174 | 400 | Parâmetros insuficientes. |
+| Api | 1175 | 400 | Registro não encontrado. |
+| Api | 1176 | 400 | Parâmetro incorreto. |
+| Api | 1177 | 400 | Parâmetro incorreto. |
+| Api | 1178 | 400 | Parâmetro incorreto. |
+| Api | 1179 | 400 | Nenhum registro modificado. |
+| Api | 1180 | 400 | Parâmetros insuficientes. |
+| Api | 1181 | 400 | Registro não encontrado. |
+| Api | 1182 | 400 | Nenhum registro modificado. |
+| Api | 1183 | 400 | Parâmetros insuficientes. |
+| Api | 1184 | 400 | Registro não encontrado. |
+| Api | 1185 | 400 | Nenhum registro modificado. |
+| Api | 1186 | 400 | Parâmetros insuficientes. |
+| Api | 1187 | 400 | Registro não encontrado. |
+| Api | 1188 | 400 | Nenhum registro modificado. |
+| Api | 1189 | 400 | Exception. |
+| Api | 1190 | 400 | Exception. |
+| Api | 1191 | 400 | Exception. |
+| Api | 1192 | 400 | Exception. |
+| Api | 1193 | 400 | Exception. |
+| Api | 1194 | 400 | Exception. |
+| Api | 1195 | 400 | Exception. |
+| Api | 1196 | 400 | Exception. |
+| Api | 1197 | 400 | Exception. |
+| Api | 1198 | 400 | Exception. |
+| Api | 1199 | 400 | Exception. |
+| Api | 1200 | 400 | Parâmetros inconsistentes. |
+| Api | 1201 | 400 | Registro não encontrado. |
+| Api | 1202 | 400 | Parâmetro incorreto. |
+| Api | 1203 | 400 | Parâmetros insuficientes. |
+| Api | 1204 | 400 | Registro não encontrado. |
+| Api | 1205 | 400 | Nenhum registro modificado. |
+
+| Api | 1206 | 400 | Usuário origen não pode efetuar hits. |
+| Api | 1207 | 400 | Usuário guard não pode efetuar hits. |

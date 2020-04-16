@@ -122,9 +122,11 @@ Para renovar, basta repetir os mesmos passos.
 #### Primeira instalação:
 
 1. Criar manualmente um database com o nome definido no arquivo **config.yml**.
-2. Criar as collections: **pet**, **user**, **chat**, **pushQueue**, **client** e **offer**.
+2. Criar as collections: **pet**, **user**, **chat**, **pushQueue**, **clients** e **offer**.
 3. Criar indice de geolocalização para a collection **pet**: `db.pet.createIndex({ location: "2dsphere" })`
 4. Criar indice de geolocalização para a collection **user**: `db.user.createIndex({ location: "2dsphere" })`
+5. Criar indice de geolocalização para a collection **clients**: `db.clients.createIndex({ location: "2dsphere" })`
+6. Criar indice de geolocalização para a collection **offer**: `db.offer.createIndex({ location: "2dsphere" })`
 
 ### Cache
 
