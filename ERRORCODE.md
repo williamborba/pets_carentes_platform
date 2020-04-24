@@ -180,6 +180,7 @@ Lista de códigos da api.
 | Api | 1203 | 400 | Parâmetros insuficientes. |
 | Api | 1204 | 400 | Registro não encontrado. |
 | Api | 1205 | 400 | Nenhum registro modificado. |
-
 | Api | 1206 | 400 | Usuário origen não pode efetuar hits. |
 | Api | 1207 | 400 | Usuário guard não pode efetuar hits. |
+| Api | 1208 | 400 | Parâmetros insuficientes. |
+| Api | 1209 | 400 | Parâmetros insuficientes. |

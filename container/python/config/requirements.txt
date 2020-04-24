@@ -1,5 +1,6 @@
 Django==3
 PyJWT
+avinit[png]
 pymongo
 Pillow
 boto3
