@@ -184,3 +184,7 @@ Lista de códigos da api.
 | Api | 1207 | 400 | Usuário guard não pode efetuar hits. |
 | Api | 1208 | 400 | Parâmetros insuficientes. |
 | Api | 1209 | 400 | Parâmetros insuficientes. |
+| Api | 1210 | 400 | Exception. |
+| Api | 1211 | 400 | Parâmetros insuficientes. |
+| Api | 1212 | 400 | Parâmetros insuficientes. |
+| Api | 1213 | 400 | Erro no envio do email. |

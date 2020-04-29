@@ -1,5 +1,7 @@
 Django==3
 PyJWT
+rq
+redis
 avinit[png]
 pymongo
 Pillow

@@ -1,5 +1,15 @@
 version: '3'
 services:
+    databasequeue:
+        image: redis:5
+        ports:
+            - ${DATABASE_QUEUE_PORT}:6379
+        volumes:
+            - ./container/redis/data:/data
+            - ./container/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
+        command: redis-server --requirepass ${DATABASE_QUEUE_PASSWORD}
+        networks:
+            - pc_network
     database:
         image: mongo:4.2
         environment:
