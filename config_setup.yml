@@ -15,16 +15,22 @@ api:
         publish_pending: v1/admin/pet/pending
         publish_accept: v1/pet/timeline
         user_pet: v1/admin/pet/user
+        client: v1/admin/client
+        offer: v1/admin/offer
 allowed_host:
     - 127.0.0.1
     - 100.26.100.238
     - petscarentes.app
 database:
     name: pets-carentes-api
-    host: 100.26.100.238
+    host: database
     port: 27017
     user: willcode
     password: 71f5ab94c34f3e0dd6f6c9a9b552d38f
+databasequeue:
+    host: databasequeue
+    port: 6379
+    password: 81f5ab94c34f3e0dd6f6c9a9b552d38f
 email:
     tls: True
     host: 'smtp.gmail.com'

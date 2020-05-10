@@ -188,3 +188,16 @@ Lista de códigos da api.
 | Api | 1211 | 400 | Parâmetros insuficientes. |
 | Api | 1212 | 400 | Parâmetros insuficientes. |
 | Api | 1213 | 400 | Erro no envio do email. |
+| Api | 1214 | 500 | Exception. |
+| Api | 1215 | 400 | Parâmetros insuficientes. |
+| Api | 1216 | 400 | Parâmetros insuficientes. |
+| Api | 1217 | 400 | Registro não encontrado. |
+| Api | 1218 | 400 | Nenhum registro modificado. |
+| Api | 1219 | 400 | Não foi possível acessar base de dados. |
+| Api | 1220 | 400 | Erro no processamento do worker. |
+| Api | 1221 | 400 | Parâmetro incorreto. |
+| Api | 1222 | 400 | Parâmetros insuficientes. |
+| Api | 1223 | 400 | Registro não encontrado. |
+| Api | 1224 | 400 | Limite de fotos extras atingido. |
+| Api | 1225 | 400 | Nenhum registro modificado. |
+| Api | 1226 | 400 | Exception. |

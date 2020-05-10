@@ -132,10 +132,20 @@ Para renovar, basta repetir os mesmos passos.
 
 Para limpar o cache do python e visualziar as mudanças basta reiniciar o container onde está o serviço do python. Ex: `sudo docker restart {container_id}`
 
-### Push
+### Commands - Rotinas do sistema
+
+#### Push
 
 Os disparos em push são processados em uma fila, por um scrip python, podendo ser ativado com o seguinte comando:
 
 ```
 sudo docker exec -it pc_platform_appapi_1 bash -c "python manage.py PushQueue"
+```
+
+#### Worker Queue - Filas de processamento com QR
+
+Comando para ativar o worker:
+
+```
+sudo docker exec -it pc_platform_appapi_1 bash -c "python manage.py Worker"
 ```
