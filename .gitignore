@@ -4,6 +4,7 @@ log
 config.yml
 cache
 log/
+.idea/
 container/mongo/data/*
 container/nginx/config/ssl_conf/*
 .env
