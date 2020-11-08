@@ -201,3 +201,5 @@ Lista de códigos da api.
 | Api | 1224 | 400 | Limite de fotos extras atingido. |
 | Api | 1225 | 400 | Nenhum registro modificado. |
 | Api | 1226 | 400 | Exception. |
+| Api | 1227 | 400 | Parâmetro incorreto. |
+| Api | 1228 | 400 | Parâmetro incorreto. |

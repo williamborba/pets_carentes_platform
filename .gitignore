@@ -5,6 +5,7 @@ config.yml
 cache
 log/
 .idea/
+.vscode/
 container/mongo/data/*
 container/nginx/config/ssl_conf/*
 .env

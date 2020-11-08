@@ -6,8 +6,9 @@ TODO
 
 Foram utilizadas as seguintes tecnologias:
 
-* Backend: Python3 com framework Django 3.*
-* Banco de dados mongodb 4.*
+* Backend: Python com framework Django.
+* Banco de dados mongodb.
+* Fila assincrona com redis.
 
 ### Requisitos
 
@@ -18,8 +19,6 @@ Foram utilizadas as seguintes tecnologias:
 5. Acesso a internet.
 
 ### Instalação
-
-TODO
 
 1. Efetuar o clone do projeto, com a flag **--recurse-submodules** do GitHub: `git clone --recurse-submodules https://gitlab.com/willcode/petsCarentesPlatform.git`
 2. Acessar o diretório do projeto: `cd petsCarentesPlatform`

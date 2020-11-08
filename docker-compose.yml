@@ -1,7 +1,7 @@
 version: '3'
 services:
     databasequeue:
-        image: redis:5
+        image: redis:6
         ports:
             - ${DATABASE_QUEUE_PORT}:6379
         volumes:
@@ -11,7 +11,7 @@ services:
         networks:
             - pc_network
     database:
-        image: mongo:4.2
+        image: mongo:4.4
         environment:
             MONGO_INITDB_ROOT_USERNAME: ${DATABASE_PRIMARY_USERNAME}
             MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PRIMARY_PASSWORD}
