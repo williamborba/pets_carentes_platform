@@ -132,7 +132,6 @@ Lista de códigos da api.
 | Api | 1154 | 400 | Registro não encontrado. |
 | Api | 1155 | 400 | Erro na criação do registro. |
 | Api | 1156 | 400 | Parâmetros insuficientes. |
-| Api | 1157 | 400 | Parâmetros insuficientes. |
 | Api | 1158 | 400 | Registro não encontrado. |
 | Api | 1159 | 400 | Parâmetro incorreto. |
 | Api | 1160 | 400 | Parâmetro incorreto. |
@@ -148,7 +147,6 @@ Lista de códigos da api.
 | Api | 1171 | 400 | Registro não encotrado. |
 | Api | 1172 | 400 | Erro na criação do registro oferta. |
 | Api | 1173 | 400 | Parâmetros insuficientes. |
-| Api | 1174 | 400 | Parâmetros insuficientes. |
 | Api | 1175 | 400 | Registro não encontrado. |
 | Api | 1176 | 400 | Parâmetro incorreto. |
 | Api | 1177 | 400 | Parâmetro incorreto. |
