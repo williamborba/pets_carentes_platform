@@ -201,3 +201,7 @@ Lista de códigos da api.
 | Api | 1226 | 400 | Exception. |
 | Api | 1227 | 400 | Parâmetro incorreto. |
 | Api | 1228 | 400 | Parâmetro incorreto. |
+| Api | 1229 | 400 | Parâmetros insuficientes. |
+| Api | 1230 | 400 | Registro não encontrado. |
+| Api | 1231 | 400 | Nenhum registro modificado. |
+| Api | 1232 | 500 | Exception. |
