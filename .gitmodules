@@ -1,6 +1,6 @@
 [submodule "appApi"]
-	path = appApi
-	url = https://github.com/willcode-labs/PetsCarentesApi.git
-[submodule "appWeb"]
+	path = app_api
+	url = https://github.com/willcode-labs/pets_carentes_api.git
+[submodule "ap_web"]
 	path = appWeb
-	url = https://github.com/willcode-labs/PetsCarentesWeb.git
+	url = https://github.com/willcode-labs/pets_carentes_web.git

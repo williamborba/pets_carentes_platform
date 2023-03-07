@@ -11,3 +11,10 @@ container/nginx/config/ssl_conf/*
 .env
 __pycache__/
 *.py[cod]
+venv
+htmlcov
+coverage
+.coverage
+.pytest_cache
+.DS_Store
+pets_carentes_platform.code-workspace

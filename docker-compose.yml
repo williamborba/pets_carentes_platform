@@ -1,17 +1,13 @@
-version: '3'
 services:
-    databasequeue:
-        image: redis:6
+    database_queue:
+        image: redis:7
         ports:
             - ${DATABASE_QUEUE_PORT}:6379
-        volumes:
-            - ./container/redis/data:/data
-            - ./container/redis/config/redis.conf:/usr/local/etc/redis/redis.conf
         command: redis-server --requirepass ${DATABASE_QUEUE_PASSWORD}
         networks:
             - pc_network
-    database:
-        image: mongo:4.4
+    database_nosql:
+        image: mongo:6
         environment:
             MONGO_INITDB_ROOT_USERNAME: ${DATABASE_PRIMARY_USERNAME}
             MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PRIMARY_PASSWORD}
@@ -21,40 +17,40 @@ services:
             - ./container/mongo/data:/data/db
         networks:
             - pc_network
-    appapi:
+    app_api:
         build: ./container/python/
         volumes:
-            - ./appApi/:/project/
-        command: 'gunicorn --chdir ${API_PROJECT_NAME} -w ${API_GUNICORN_WORKER} --bind :8000 ${API_PROJECT_NAME}.wsgi:application'
+            - ./app_api/:/project/app_api/
+        command: ${APP_API_COMMAND}
         networks:
             - pc_network
-    appweb:
-        build: ./container/python/
-        volumes:
-            - ./appWeb/:/project/
-        command: 'gunicorn --chdir ${WEB_PROJECT_NAME} -w ${WEB_GUNICORN_WORKER} --bind :8000 ${WEB_PROJECT_NAME}.wsgi:application'
-        networks:
-            - pc_network
+    # appweb:
+    #     build: ./container/python/
+    #     volumes:
+    #         - ./appWeb/:/project/
+    #     command: 'gunicorn --chdir ${WEB_PROJECT_NAME} -w ${WEB_GUNICORN_WORKER} --bind :8000 ${WEB_PROJECT_NAME}.wsgi:application'
+    #     networks:
+    #         - pc_network
     webserver:
-        image: nginx:1.17
+        image: nginx:1
         ports:
-            - ${WEB_PORT_AUTH}:8000
-            - ${WEB_PORT_SSL_AUTH}:443
+            - ${WEBSERVER_PORT}:8000
+            - 443:443
         volumes:
-            - './container/nginx/config/nginx.conf:/etc/nginx/nginx.conf'
-            - './container/nginx/config/default.conf:/etc/nginx/conf.d/default.conf'
-            - './container/nginx/config/ssl_conf/:/etc/letsencrypt'
-            - './container/nginx/config/ssl_data/:/var/www/certbot'
+            - './container/nginx/nginx.conf:/etc/nginx/nginx.conf'
+            - './container/nginx/default.conf:/etc/nginx/conf.d/default.conf'
+            - './container/nginx/ssl_conf/:/etc/letsencrypt'
+            - './container/nginx/ssl_data/:/var/www/certbot'
             - './log:/var/log/nginx/'
-            - './appWeb/template/static/:/appWeb/static/'
+            # - './app_web/template/static/:/app_web/static/'
         command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
         networks:
             - pc_network
     # certbot:
     #     image: certbot/certbot
     #     volumes:
-    #         - './container/nginx/config/ssl_conf/:/etc/letsencrypt'
-    #         - './container/nginx/config/ssl_data/:/var/www/certbot'
+    #         - './container/nginx/ssl_conf/:/etc/letsencrypt'
+    #         - './container/nginx/ssl_data/:/var/www/certbot'
     #     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     #     networks:
     #         - pc_network

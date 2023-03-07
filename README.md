@@ -1,100 +1,50 @@
-## WillCode - PetsCarentesPlatform
+## PetsCarentesPlatform
 
-TODO
+Serviços de api para o aplicativo PetsCarentes.
 
 ### Tecnologias
 
-Foram utilizadas as seguintes tecnologias:
-
-* Backend: Python com framework Django.
-* Banco de dados mongodb.
-* Fila assincrona com redis.
+* Backend: Python com framework Starlette.
+* Banco de dados Mongodb.
+* Fila assíncrona com redis.
+* Orquestração de containers com docker e docker-compose.
 
 ### Requisitos
 
 1. Sistema operacional Linux, Windows ou MacOS.
-2. Docker-CE instalado e corretamente configurado. - https://docs.docker.com/install/ 
+2. Docker-CE instalado e corretamente configurado. - https://docs.docker.com/install/
 3. Docker compose instalado e corretamente configurado. - https://docs.docker.com/compose/install/
-4. Acesso aos repositorios do GitLab.
-5. Acesso a internet.
+
+### Roadmap
+
+* Reconhecimento de imagem: A API OpenAI GPT-3 pode ajudar a criar um modelo de reconhecimento de imagem que pode
+  identificar animais em fotos, identificar raças e outras características dos animais.
+* Chatbots: A API OpenAI GPT-3 também pode ajudar a criar chatbots para responder às perguntas dos usuários sobre
+  animais e fornecer informações úteis sobre a adoção e cuidados de animais.
+* Geração de Texto: A API OpenAI GPT-3 pode ser usada para gerar automaticamente descrições de animais, como
+  personalidade, comportamento, hábitos alimentares, etc.
+* Análise de Sentimento: A API OpenAI pode ser usada para analisar o sentimento dos usuários em relação ao seu
+  aplicativo e à adoção de animais.
+* Recomendação de animais: A inteligência artificial pode ser usada para recomendar animais para os usuários com base em
+  suas preferências e histórico de adoção.
+
+### Configuração
+
+1. Setar as variáveis de ambiente no arquivo **.env**. Nos diretórios `./pets_carentes_platform` e `.
+   /pets_carentes_platform/app_api/` (renomear .env_setup para .env).
 
 ### Instalação
 
-1. Efetuar o clone do projeto, com a flag **--recurse-submodules** do GitHub: `git clone --recurse-submodules https://gitlab.com/willcode/petsCarentesPlatform.git`
-2. Acessar o diretório do projeto: `cd petsCarentesPlatform`
-3. Configurar as portas de acesso dos containers no arquivo **.env_setup**, em seguinda, criar uma cópia com o nome **.env**: `cp .env_setup .env` 
-4. Copiar os arquivos de configuração, alterando os parâmetros que se façam necessários. Maiores detalhes na etapa **Configuração de instalação**
-5. Rodar o arquivo docker-compose: `docker-compose --project-name {USUÁRIO} up -d`
-6. Por ultimo certifique que o certificado seja instalado, maiores detalhes na seção **Certificado**.
+1. docker-compose up -d
 
-#### Novas pastas:
-
-1. Pasta **log** do Nginx: `sudo mkdir ./log`
-2. Pasta **log** do Django: `sudo mkdir ./appApi/log`
-3. Pasta **log** do Django: `sudo mkdir ./appWeb/log`
-
-#### Permissões:
-
-1. `sudo chmod -R 777 ./log`
-2. `sudo chmod -R 777 ./appApi/log`
-3. `sudo chmod -R 777 ./appWeb/log`
-
-#### Configurações da instalação
-
-##### Etapa 3
-
-Na etapa **3**, você pode consultar as portas que estão em uso pelo comando `sudo docker ps -a`, preferivelmente utilize portas próximas as que já existem.
-
-##### Etapa 4
-
-Copiar o arquivo de configuração yml para dentro das pastas **app**.
-
-Exemplo: `cp config_setup.yml app/config.yml`
-
-Antes de copiar o arquivo, revise os parâmetros de configuração.
-
-Um dos parâmetros importantes é o número de **WORKERs do Gunicorn**, que pode ser calculado, conforme a formula abaixo:
+### Testes
 
 ```
-PROCESSOR_COUNT=$(nproc)
-GUNICORN_WORKER_COUNT=$(( PROCESSOR_COUNT * 2 + 1 ))
-
-echo $GUNICORN_WORKER_COUNT
+cd app_api
+docker exec pets_carentes_platform_app_api_1 bash -c "cd app_api && coverage run -m pytest && coverage report && coverage lcov -o coverage/lcov" && genhtml coverage/lcov -o coverage/html && open coverage/html/index.html
 ```
 
-##### Etapa 5
-
-Na etapa **5**, substituir **{USUÁRIO}** pelo nome do usuário, onde a instalação será feita, EX:
-
-```shell
-sudo docker-compose --project-name pc_platform up -d
-```
-
-### Dependências python
-
-Comando para instalação de dependências:
-
-```shell
-pip install -r /project/requirements.txt
-```
-
-### Conteúdo estático
-
-Sempre que um arquivo estático, como JS, CSS ou plugin Jquery for alterado, é necessário rodar este comando:
-
-```shell
-python /project/manage.py collectstatic
-```
-
-Exemplo: `sudo docker exec -it pc_platform_appweb_1 bash -c "echo 'yes' | python /project/manage.py collectstatic"`
-
-### Certificado
-
-Rodar o container **certbot** para gerar os arquivos necessários para instalação do certificado.
-O container **certbot** está compartilhando volumes com **webserver**, com origem local **./container/nginx/config/ssl_conf** e **./container/nginx/config/ssl_data**.
-Substituir as variaveis pelos seus valores reais: **{{email}}**, **{{domain}}**.
-
-A variável {{--staging}} é utilizada para testes.
+### Certificado - TODO
 
 ```shell
 docker-compose run --rm --entrypoint "\
@@ -107,44 +57,8 @@ docker-compose run --rm --entrypoint "\
     --force-renewal" certbot
 ```
 
-Em seguida reinicie o container do **webserver**.
-
-```
-sudo docker restart webserver_1
-```
-
-O acesso por HTTPS deverá estar ok.
-Para renovar, basta repetir os mesmos passos.
-
 ### Database
 
-#### Primeira instalação:
-
-1. Criar manualmente um database com o nome definido no arquivo **config.yml**.
-2. Criar as collections: **pet**, **user**, **chat**, **pushQueue**, **clients** e **offer**.
-3. Criar indice de geolocalização para a collection **pet**: `db.pet.createIndex({ location: "2dsphere" })`
-4. Criar indice de geolocalização para a collection **user**: `db.user.createIndex({ location: "2dsphere" })`
-5. Criar indice de geolocalização para a collection **clients**: `db.clients.createIndex({ location: "2dsphere" })`
-6. Criar indice de geolocalização para a collection **offer**: `db.offer.createIndex({ location: "2dsphere" })`
-
-### Cache
-
-Para limpar o cache do python e visualziar as mudanças basta reiniciar o container onde está o serviço do python. Ex: `sudo docker restart {container_id}`
-
-### Commands - Rotinas do sistema
-
-#### Push
-
-Os disparos em push são processados em uma fila, por um scrip python, podendo ser ativado com o seguinte comando:
-
-```
-sudo docker exec -it pc_platform_appapi_1 bash -c "python manage.py PushQueue"
-```
-
-#### Worker Queue - Filas de processamento com QR
-
-Comando para ativar o worker:
-
-```
-sudo docker exec -it pc_platform_appapi_1 bash -c "python manage.py Worker"
-```
+1. Criar manualmente um database com o nome definido no arquivo **.env**.
+2. Criar as collections: **pet**, **user**.
+3. Criar índice de geolocalização para a collection **pet**: `db.pet.createIndex({ location: "2dsphere" })`

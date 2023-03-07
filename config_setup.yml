@@ -6,15 +6,15 @@ aws:
     s3:
         region: sa-east-1
         bucket: pets-carentes-prod
-        path: pet/
+        path: user/
         url_prefix: https://pets-carentes-hlg.s3-sa-east-1.amazonaws.com/
 api:
     host: http://192.168.25.3:9021/service/api/
     route:
         auth: v1/admin/auth
-        publish_pending: v1/admin/pet/pending
-        publish_accept: v1/pet/timeline
-        user_pet: v1/admin/pet/user
+        publish_pending: v1/admin/user/pending
+        publish_accept: v1/user/timeline
+        user_pet: v1/admin/user/user
         client: v1/admin/client
         offer: v1/admin/offer
 allowed_host:
