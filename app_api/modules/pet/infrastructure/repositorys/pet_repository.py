@@ -26,16 +26,6 @@ class PetRepository:
 
     async def create_or_update(self, pet: Pet) -> Pet:
         if pet.pet_id is not None:
-
-            import logging
-            logging.warning('###################################################')
-            logging.warning(pet)
-            logging.warning('---------------------------------------------------')
-            logging.warning(pet.copy_with(date_update=datetime.now(), ))
-            logging.warning('---------------------------------------------------')
-            logging.warning(PetDto.from_entity(pet.copy_with(date_update=datetime.now(), ), ))
-            logging.warning('###################################################')
-
             pet_update: UpdateResult = await self.pet_collection.update_one(
                 filter={'_id': ObjectId(oid=pet.pet_id, )},
                 update={'$set': PetDto.from_entity(pet.copy_with(date_update=datetime.now(), ), ).to_json(

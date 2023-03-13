@@ -44,7 +44,7 @@ class PetPhotoCreateUseCase:
             raise CoreException('pet is limit photos')
 
         pet.is_valid_for_update(
-            user=self.user, pet_new=pet, )
+            user=self.user, pet_new=pet.copy_with(accept=None, ), )
 
         asset_read: bytes = await photo_upload_dto.asset.read()
 

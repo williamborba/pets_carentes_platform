@@ -57,7 +57,7 @@ class TimelineDto:
 @dataclass(frozen=True, config=DataClassConfig, )
 class PhotoUploadDto:
     pet_id: str
-    asset: UploadFile
+    asset: Optional[UploadFile]
     featured: bool
 
     @staticmethod
@@ -67,7 +67,7 @@ class PhotoUploadDto:
         if isinstance(featured, str):
             featured = featured == 'true'
 
-        if featured is None:
+        if featured is False or featured is None:
             featured = False
 
         return PhotoUploadDto(
