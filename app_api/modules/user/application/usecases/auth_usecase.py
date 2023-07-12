@@ -28,13 +28,11 @@ class AuthUseCase:
 
         user_from_request.is_valid()
 
-        user: Optional[User]
-
-        user = await self.user_repository.find_by_social(
+        user: Optional[User] = await self.user_repository.find_by_social(
             provider_type=user_from_request.provider.provider_type,
             uid=user_from_request.provider.uid, )
 
-        if user.register_status is False:
+        if user and user.register_status is False:
             raise CoreException(message='User is not register', )
 
         if not user:

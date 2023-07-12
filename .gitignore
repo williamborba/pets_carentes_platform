@@ -18,3 +18,7 @@ coverage
 .pytest_cache
 .DS_Store
 pets_carentes_platform.code-workspace
+bin/
+lib/
+lib64
+pyvenv.cfg
